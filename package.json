@@ -1,12 +1,12 @@
 {
-  "name": "zoom-api-jwt",
+  "name": "zoom-api-attandance",
   "version": "1.0.0",
-  "description": "Zoom API JWT Sample app",
+  "description": "Attendance Reports using Zoom API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Michael Purnell",
+  "author": "Kerem KÖKSAL",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",

@@ -18,7 +18,7 @@ npm install
 
 To generate JWT, you have to provide your API Key and API Secret credentials. You can locate these credentials in your app’s configuration by going to Zoom Marketplace > Manage > **YourApp** > App Credentials. If you haven’t already registered your app in the marketplace, you will have to create an app here to get your credentials. For the purpose of this sample app, you only need your credentials and you do not have to fill out any additional information while registering the app.
 
-> In the config.js file, input your client API Key & Secret credentials.
+> Rename `config.js.example` to `config.js` In the config.js file, input your client API Key & Secret credentials.
 ``` 
 	const config = {
 	production:{	

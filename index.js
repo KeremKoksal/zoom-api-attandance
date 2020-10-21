@@ -1,4 +1,3 @@
-//include required modules
 const jwt = require('jsonwebtoken');
 const config = require('./config');
 const rp = require('request-promise');
@@ -10,28 +9,18 @@ app.use(express.static('public'));
 var email, userid, resp;
 const port = 3000;
 
-//Use the ApiKey and APISecret from config.js
 const payload = {
     iss: config.APIKey,
     exp: ((new Date()).getTime() + 5000)
 };
 const token = jwt.sign(payload, config.APISecret);
-
-
-//get the form 
 app.get('/', (req, res) => res.send(req.body));
 
-//use userinfo from the form and make a post request to /userinfo
 app.post('/participants', (req, res) => {
-    //store the email address of the user in the email variable
     email = req.body.email;
     from = req.body.from;
     to = req.body.to;
-    //check if the email was stored in the console
-    console.log(email);
-    //Store the options for Zoom API which will be used to make an API call later.
     var options = {
-        //You can use a different uri if you're making an API call to a different Zoom endpoint.
         uri: "https://api.zoom.us/v2/users/" + email,
         qs: {
             status: 'active'
@@ -126,7 +115,6 @@ app.post('/participants', (req, res) => {
 
         })
         .catch(function (err) {
-            // API call failed...
             console.log('API call failed, reason ', err);
         });
 
